@@ -5,18 +5,18 @@ def selection_sort(arr):
     for i in range(0, len(arr)):
         min_ind = i
         for a in range(i, len(arr)):
-            print(arr[a])
             if arr[a] < arr[min_ind]:
                 min_ind = a
-        temp = arr[i]
-        arr[i] = arr[min_ind]
-        arr[min_ind] = temp
+        arr[i], arr[min_ind] = arr[min_ind], arr[i]
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-
+    for i in range(0, len(arr)):
+        for a in range(0, len(arr)-1):
+            if arr[a] > arr[a+1]:
+                arr[a], arr[a+1] = arr[a+1], arr[a]
     return arr
 
 
@@ -24,13 +24,3 @@ def bubble_sort(arr):
 def count_sort(arr, maximum=-1):
 
     return arr
-
-
-selection_sort([4, 2, 6, 1, 7, 9, 8])
-
-
-"""
-[4, 2, 6, 1, 7, 9, 8]
-[1, 2, 6, 4, 7, 9, 8]
-[1, 2, 6, 4, 7, 9, 8]
-"""
